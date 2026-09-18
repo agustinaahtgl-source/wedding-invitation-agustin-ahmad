@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5eee8">
+  <meta name="description" content="The Wedding of Agustin & Ahmad Arifin — 17 July 2027">
+  <title>The Wedding of Agustin & Ahmad Arifin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bgMusic" src="assets/wedding-music.mp3" loop preload="metadata"></audio>
+
+  <button class="music-toggle" id="musicToggle" aria-label="Putar musik" aria-pressed="false">
+    <span class="music-icon">♫</span>
+  </button>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <img class="hero-photo" src="assets/couple-01.jpg" alt="Agustin dan Ahmad Arifin" loading="eager">
+      <div class="hero-content reveal">
+        <p class="eyebrow">THE WEDDING OF</p>
+        <h1>Agustin <span>&amp;</span><br>Ahmad Arifin</h1>
+        <p class="hero-date">17 · 07 · 2027</p>
+        <button class="open-btn" id="openInvitation">Open Invitation</button>
+      </div>
+    </section>
+
+    <section class="intro section">
+      <div class="ornament">♡</div>
+      <p class="eyebrow">WITH LOVE</p>
+      <p class="lead">Dengan penuh kebahagiaan, kami mengundang Anda untuk menjadi bagian dari hari istimewa kami.</p>
+      <p class="script-note">“Two hearts, one beautiful beginning.”</p>
+    </section>
+
+    <section class="couple section">
+      <p class="eyebrow">THE COUPLE</p>
+      <h2>Our forever begins here.</h2>
+      <div class="couple-grid">
+        <article class="person">
+          <img src="assets/groom.jpg" alt="Ahmad Arifin" loading="lazy">
+          <h3>Ahmad Arifin, S.I.Kom</h3>
+          <p>Putra dari<br><strong>Mardiana</strong> &amp; <strong>Lasiyem</strong></p>
+        </article>
+        <div class="ampersand">&amp;</div>
+        <article class="person">
+          <img src="assets/bride.jpg" alt="Agustin" loading="lazy">
+          <h3>Agustin, S.E</h3>
+          <p>Putri dari<br><strong>Benny Samsudin</strong> &amp; <strong>Hermida Hutagaol</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="countdown section">
+      <p class="eyebrow">COUNTING DOWN</p>
+      <h2>Until our special day</h2>
+      <div class="count-grid" id="countdown">
+        <div><strong id="days">00</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      </div>
+      <a class="text-link" id="calendarLink" target="_blank" rel="noopener">＋ Save the Date</a>
+    </section>
+
+    <section class="event section">
+      <p class="eyebrow">THE DAY</p>
+      <h2>Wedding Details</h2>
+      <div class="event-card">
+        <div class="event-item">
+          <span class="event-label">AKAD</span>
+          <strong>10:00 WIB</strong>
+          <span>Sabtu, 17 Juli 2027</span>
+        </div>
+        <div class="divider"></div>
+        <div class="event-item">
+          <span class="event-label">RESEPSI</span>
+          <strong>11:00 WIB — Selesai</strong>
+          <span>Sabtu, 17 Juli 2027</span>
+        </div>
+      </div>
+      <div class="venue">
+        <p class="eyebrow">VENUE</p>
+        <h3>Lapangan PB Kemang</h3>
+        <p>Gg. Sabar, Rangkapan Jaya,<br>Kec. Pancoran Mas, Kota Depok,<br>Jawa Barat 16435</p>
+        <a class="map-btn" href="https://maps.app.goo.gl/fbhnJiMfCUA7Hio5A" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+      </div>
+    </section>
+
+    <section class="rsvp section" id="rsvp">
+      <p class="eyebrow">KINDLY RESPOND</p>
+      <h2>Will you join us?</h2>
+      <p class="muted">Mohon konfirmasi kehadiran Anda melalui form di bawah.</p>
+      <form id="rsvpForm" novalidate>
+        <label>Nama Lengkap
+          <input id="guestName" name="name" type="text" autocomplete="name" placeholder="Nama lengkap" required>
+        </label>
+        <fieldset>
+          <legend>Kehadiran</legend>
+          <div class="attendance-options">
+            <label class="choice"><input type="radio" name="attendance" value="Hadir" required><span>Hadir</span></label>
+            <label class="choice"><input type="radio" name="attendance" value="Tidak Hadir"><span>Tidak Hadir</span></label>
+          </div>
+        </fieldset>
+        <label>Ucapan &amp; Doa
+          <textarea id="guestMessage" name="message" rows="4" placeholder="Tulis ucapan untuk kedua mempelai..." required></textarea>
+        </label>
+        <button class="submit-btn" type="submit">Kirim RSVP</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+
+    <section class="wishes section">
+      <p class="eyebrow">FROM THE HEART</p>
+      <h2>Wedding Wishes</h2>
+      <div class="wishes-list" id="wishesList">
+        <p class="muted centered">Memuat ucapan...</p>
+      </div>
+    </section>
+
+    <section class="gift section">
+      <p class="eyebrow">WITH LOVE</p>
+      <h2>Wanna give us some gifts?</h2>
+      <p class="muted">Doa dan kehadiran Anda adalah hadiah terindah. Jika berkenan memberikan tanda kasih:</p>
+      <div class="gift-card">
+        <div class="gift-row">
+          <span>BCA</span>
+          <strong>7401881305</strong>
+          <small>a.n. Agustina</small>
+        </div>
+        <button class="copy-btn" data-copy="7401881305">Copy Number</button>
+      </div>
+      <div class="gift-card">
+        <div class="gift-row">
+          <span>BANK</span>
+          <strong>1620068660</strong>
+          <small>a.n. Ahmad Arifin</small>
+        </div>
+        <button class="copy-btn" data-copy="1620068660">Copy Number</button>
+      </div>
+      <div class="gift-address">
+        <span>Gift Delivery Address</span>
+        <p>Jl. Pitara Raya Gg. Swadaya 2 RT 04/RW 19 No. 83, Depok 16435</p>
+        <p>Gg. Sabar RT 04/RW 19 (WARUNG), Depok 16435</p>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <img src="assets/couple-02.jpg" alt="Agustin dan Ahmad Arifin" loading="lazy">
+      <div class="closing-copy">
+        <p class="eyebrow">SEE YOU ON OUR SPECIAL DAY</p>
+        <h2>Thank you for being part of our story.</h2>
+        <p>Agustin &amp; Ahmad Arifin</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2027 Agustin &amp; Ahmad Arifin</footer>
+  <script src="script.js"></script>
+</body>
+</html>
